@@ -53,9 +53,13 @@ class _AboutState extends State<About> {
           Divider(),
           Row(
             children: <Widget>[
+              SizedBox(width: 10,),
+              CircleAvatar(
+                backgroundImage: AssetImage('assets/images/ashu.jpg'),
+              ),
               Container(
                 padding: EdgeInsets.all(10),
-                child: Text("App created by Ashutosh Singh",style: TextStyle(color: Colors.black45),),
+                child: Text("App created by Ashutosh Singh",style: TextStyle(color: Colors.black45,fontSize: 15),),
               ),
               IconButton(icon: Icon(FontAwesomeIcons.github,size: 20,color: Colors.black87), onPressed:()=>launch("https://github.com/zohan4sh")),
               IconButton(icon: Icon(FontAwesomeIcons.instagram,size: 20,color: Colors.black87,), onPressed:()=>launch("https://www.instagram.com/zohan_ash/")),
