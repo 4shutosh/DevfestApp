@@ -1,3 +1,4 @@
+import 'package:devfest/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -18,14 +19,14 @@ class _SpeakersState extends State<Speakers> {
       body:new ListView(
         children: <Widget>[
           Card(
-            elevation: 0,
+            elevation: 2,
             margin: const EdgeInsets.all(5),
             child:Padding(
               padding: const EdgeInsets.all(10),
               child: new Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    color: Colors.blue[50],
+                    color: Colors.blue[100],
                     border: Border.all(color: Colors.blue),
                   borderRadius: BorderRadius.circular(20)
                 ),
@@ -91,15 +92,15 @@ class _SpeakersState extends State<Speakers> {
             ),
           ),
           Card(
-            elevation: 0,
+            elevation: 2,
             margin: const EdgeInsets.all(5),
             child:Padding(
               padding: const EdgeInsets.all(10),
               child: new Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.teal[100],
-                  border: Border.all(color: Colors.teal),
+                  color: Colors.green[100],
+                  border: Border.all(color: Colors.green),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: new Row(
@@ -134,9 +135,11 @@ class _SpeakersState extends State<Speakers> {
                           ],
                         ),
                         SizedBox(height: 8),
-                        Text(
-                          "Co-Founder Coding Blocks",
-                          style: TextStyle(color: Colors.black45),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Co-Founder Coding Blocks",style: TextStyle(color:Colors.black45),),
+                          ],
                         ),
                         SizedBox(height: 5),
                         Row(
@@ -164,15 +167,15 @@ class _SpeakersState extends State<Speakers> {
             ),
           ),
           Card(
-            elevation: 0,
+            elevation: 2,
             margin: const EdgeInsets.all(5),
             child:Padding(
               padding: const EdgeInsets.all(10),
               child: new Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    color: Colors.green[100],
-                    border: Border.all(color: Colors.green),
+                    color: Colors.yellow[100],
+                    border: Border.all(color: Colors.yellow),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: new Row(
@@ -237,14 +240,14 @@ class _SpeakersState extends State<Speakers> {
             ),
           ),
           Card(
-            elevation: 0,
+            elevation: 2,
             margin: const EdgeInsets.all(5),
             child:Padding(
               padding: const EdgeInsets.all(10),
               child: new Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.red[50],
+                  color: Colors.red[100],
                   border: Border.all(color: Colors.red),
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -280,9 +283,12 @@ class _SpeakersState extends State<Speakers> {
                           ],
                         ),
                         SizedBox(height: 8),
-                        Text(
-                          "WTM Ambassador",
-                          style: TextStyle(color: Colors.black45),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Ambassador",style: TextStyle(color: Colors.black45),),
+                            Text("Women Techmakers",textAlign: TextAlign.left,style: TextStyle(color: Colors.black45),)
+                          ],
                         ),
                         SizedBox(height: 5),
                         Row(
@@ -310,15 +316,15 @@ class _SpeakersState extends State<Speakers> {
             ),
           ),
           Card(
-            elevation: 0,
+            elevation: 2,
             margin: const EdgeInsets.all(5),
             child:Padding(
               padding: const EdgeInsets.all(10),
               child: new Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.yellow[50],
-                  border: Border.all(color: Colors.yellow),
+                  color: Colors.blue[100],
+                  border: Border.all(color: Colors.blue),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: new Row(
@@ -348,14 +354,24 @@ class _SpeakersState extends State<Speakers> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: <Widget>[
-                            Text("Sabyasachi M",style: TextStyle(fontSize: 23
-                            ),)
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text("Sabyasachi",style: TextStyle(fontSize: 23
+                                )),
+                                Text("Mukhopadhyay",style: TextStyle(fontSize: 23
+                                ))
+                              ],
+                            )
                           ],
                         ),
                         SizedBox(height: 8),
-                        Text(
-                          "Google Developer Expert, ML",
-                          style: TextStyle(color: Colors.black45),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Google Developer Expert",style: TextStyle(color: Colors.black45),),
+                            Text("Machine Learning",textAlign: TextAlign.left,style: TextStyle(color: Colors.black45),)
+                          ],
                         ),
                         SizedBox(height: 5),
                         Row(
@@ -380,15 +396,15 @@ class _SpeakersState extends State<Speakers> {
             ),
           ),
           Card(
-            elevation: 0,
+            elevation: 2,
             margin: const EdgeInsets.all(5),
             child:Padding(
               padding: const EdgeInsets.all(10),
               child: new Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.purple[50],
-                  border: Border.all(color: Colors.purple),
+                  color: Colors.green[100],
+                  border: Border.all(color: Colors.green),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: new Row(
@@ -423,9 +439,12 @@ class _SpeakersState extends State<Speakers> {
                           ],
                         ),
                         SizedBox(height: 8),
-                        Text(
-                          "GDE for Google Assistant",
-                          style: TextStyle(color: Colors.black45),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Google Developer Expert",style: TextStyle(color: Colors.black45),),
+                            Text("Google Assistant",style: TextStyle(color: Colors.black45),)
+                          ],
                         ),
                         SizedBox(height: 5),
                         Row(
@@ -451,15 +470,90 @@ class _SpeakersState extends State<Speakers> {
             ),
           ),
           Card(
-            elevation: 0,
+            elevation: 2,
             margin: const EdgeInsets.all(5),
             child:Padding(
               padding: const EdgeInsets.all(10),
               child: new Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.black12,
-                  border: Border.all(color: Colors.black87),
+                  color: Colors.yellow[100],
+                  border: Border.all(color: Colors.yellow),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    new ConstrainedBox(
+                      constraints: BoxConstraints.expand(
+                        height: MediaQuery.of(context).size.height*0.2,
+                        width: MediaQuery.of(context).size.width*0.3,
+
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: CachedNetworkImage(
+                          height: MediaQuery.of(context).size.height*0.5,
+                          width: MediaQuery.of(context).size.width*0.5,
+                          imageUrl: "http://spark.spit.ac.in/wp-content/uploads/2019/04/ali-mustafah-min.jpg",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 25),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Ali Mustufa Shaikh",style: TextStyle(fontSize: 20
+                            ),)
+                          ],
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          "Software Innovator @Intel",
+                          style: TextStyle(color: Colors.black45),
+                        ),
+                        Text(
+                          "Google Certified Educator",
+                          style: TextStyle(color: Colors.black45),
+                        ),
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            IconButton(icon:Icon(FontAwesomeIcons.twitter,size: 20),
+                                onPressed:()=>launch('https://twitter.com/ialimustufa')),
+                            IconButton(icon:Icon(FontAwesomeIcons.linkedin,size: 20),
+                                onPressed:()=>launch('https://www.linkedin.com/in/ialimustufa/?originalSubdomain=in') ),
+                            IconButton(icon:Icon(FontAwesomeIcons.facebookF,size: 20),
+                                onPressed:()=>launch('https://www.facebook.com/ialimustufa') ),
+
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+
+                ),
+
+              ),
+            ),
+          ),
+          Card(
+            elevation: 2,
+            margin: const EdgeInsets.all(5),
+            child:Padding(
+              padding: const EdgeInsets.all(10),
+              child: new Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.red[100],
+                  border: Border.all(color: Colors.red),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: new Row(
@@ -494,9 +588,12 @@ class _SpeakersState extends State<Speakers> {
                           ],
                         ),
                         SizedBox(height: 8),
-                        Text(
-                          "Program Manager@Google",
-                          style: TextStyle(color: Colors.black45),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Program Manager",style: TextStyle(color:Colors.black45),),
+                            Text("@Google",style: TextStyle(color:Colors.black45))
+                          ],
                         ),
                         SizedBox(height: 5),
                         Row(
@@ -520,15 +617,15 @@ class _SpeakersState extends State<Speakers> {
             ),
           ),
           Card(
-            elevation: 0,
+            elevation: 2,
             margin: const EdgeInsets.all(5),
             child:Padding(
               padding: const EdgeInsets.all(10),
               child: new Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.cyan[100],
-                  border: Border.all(color: Colors.cyan),
+                  color: Colors.blue[100],
+                  border: Border.all(color: Colors.blue),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: new Row(
@@ -590,15 +687,86 @@ class _SpeakersState extends State<Speakers> {
             ),
           ),
           Card(
-            elevation: 0,
+            elevation: 2,
             margin: const EdgeInsets.all(5),
             child:Padding(
               padding: const EdgeInsets.all(10),
               child: new Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    color: Colors.blue[50],
-                    border: Border.all(color: Colors.blue),
+                  color: Colors.green[100],
+                  border: Border.all(color: Colors.green),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    new ConstrainedBox(
+                      constraints: BoxConstraints.expand(
+                        height: MediaQuery.of(context).size.height*0.2,
+                        width: MediaQuery.of(context).size.width*0.3,
+
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: CachedNetworkImage(
+                          height: MediaQuery.of(context).size.height*0.5,
+                          width: MediaQuery.of(context).size.width*0.5,
+                          imageUrl: "https://pbs.twimg.com/profile_images/954228659329658880/siAYYOLk.jpg",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 25),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Shantanu Vishwanadha",style: TextStyle(fontSize: 20
+                            ),)
+                          ],
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          "GDG Nagpur Organizer",
+                          style: TextStyle(color: Colors.black45),
+                        ),
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            IconButton(icon:Icon(FontAwesomeIcons.twitter,size: 20),
+                                onPressed:()=>launch('https://twitter.com/thecoderpanda') ),
+                            IconButton(icon:Icon(FontAwesomeIcons.linkedin,size: 20),
+                                onPressed:()=>launch('https://www.linkedin.com/in/thecoderpanda/') ),
+                            IconButton(icon:Icon(FontAwesomeIcons.facebookF,size: 20),
+                                onPressed:()=>launch('https://www.facebook.com/shantanu.vishwanadha') ),
+
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+
+                ),
+
+              ),
+            ),
+          ),
+          Card(
+            elevation: 2,
+            margin: const EdgeInsets.all(5),
+            child:Padding(
+              padding: const EdgeInsets.all(10),
+              child: new Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    color: Colors.yellow[100],
+                    border: Border.all(color: Colors.yellow),
                     borderRadius: BorderRadius.circular(20)
                 ),
                 child: new Row(
@@ -634,7 +802,7 @@ class _SpeakersState extends State<Speakers> {
                         ),
                         SizedBox(height: 8),
                         Text(
-                          "CoFounder at YouBotics",
+                          "CoFounder of YouBotics",
                           style: TextStyle(color: Colors.black45),
                         ),
                         SizedBox(height: 5),
@@ -644,6 +812,221 @@ class _SpeakersState extends State<Speakers> {
                           children: <Widget>[
                             IconButton(icon:Icon(FontAwesomeIcons.linkedin,size: 20,),
                                 onPressed:()=>launch('https://www.linkedin.com/in/parikshit-umare/') ),
+
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+
+                ),
+
+              ),
+            ),
+          ),
+          Card(
+            elevation: 2,
+            margin: const EdgeInsets.all(5),
+            child:Padding(
+              padding: const EdgeInsets.all(10),
+              child: new Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.red[100],
+                  border: Border.all(color: Colors.red),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    new ConstrainedBox(
+                      constraints: BoxConstraints.expand(
+                        height: MediaQuery.of(context).size.height*0.2,
+                        width: MediaQuery.of(context).size.width*0.3,
+
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: CachedNetworkImage(
+                          height: MediaQuery.of(context).size.height*0.5,
+                          width: MediaQuery.of(context).size.width*0.5,
+                          imageUrl: "https://miro.medium.com/max/3150/2*Wm26BP-86ipCIhR0HpRhXg.jpeg",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 25),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Devesh Raj",style: TextStyle(fontSize: 23
+                            ),)
+                          ],
+                        ),
+                        SizedBox(height: 8),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Google Maps Analyst",style: TextStyle(color:Colors.black45),),
+                            Text("@Google LLC",style: TextStyle(color:Colors.black45))
+                          ],
+                        ),
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            IconButton(icon:Icon(FontAwesomeIcons.twitter,size: 20),
+                                onPressed:()=>launch('https://twitter.com/devish2') ),
+                            IconButton(icon:Icon(FontAwesomeIcons.linkedin,size: 20),
+                                onPressed:()=>launch('https://www.linkedin.com/in/devish2/') ),
+                            IconButton(icon:Icon(FontAwesomeIcons.medium,size: 20),
+                                onPressed:()=>launch('https://medium.com/@devish2/') ),
+
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+
+                ),
+
+              ),
+            ),
+          ),
+          Card(
+            elevation: 2,
+            margin: const EdgeInsets.all(5),
+            child:Padding(
+              padding: const EdgeInsets.all(10),
+              child: new Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    color: Colors.blue[100],
+                    border: Border.all(color: Colors.blue),
+                    borderRadius: BorderRadius.circular(20)
+                ),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    new ConstrainedBox(
+                      constraints: BoxConstraints.expand(
+                        height: MediaQuery.of(context).size.height*0.2,
+                        width: MediaQuery.of(context).size.width*0.3,
+
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: CachedNetworkImage(
+                          height: MediaQuery.of(context).size.height*0.5,
+                          width: MediaQuery.of(context).size.width*0.5,
+                          imageUrl: "https://i.ibb.co/rGqrd9d/0.jpg",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 25),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Mukta Paliwal",style: TextStyle(fontSize: 23
+                            ),)
+                          ],
+                        ),
+                        SizedBox(height: 8),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Data Scientist",style: TextStyle(color: Colors.black45),),
+                            Text("@Persisitent Systems",textAlign: TextAlign.right,style: TextStyle(color: Colors.black45),)
+                          ],
+                        ),
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            IconButton(icon:Icon(FontAwesomeIcons.linkedin,size: 20,),
+                                onPressed:()=>launch('https://in.linkedin.com/in/dr-mukta-paliwal') ),
+
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+
+                ),
+
+              ),
+            ),
+          ),
+          Card(
+            elevation: 2,
+            margin: const EdgeInsets.all(5),
+            child:Padding(
+              padding: const EdgeInsets.all(10),
+              child: new Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    color: Colors.green[100],
+                    border: Border.all(color: Colors.green),
+                    borderRadius: BorderRadius.circular(20)
+                ),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    new ConstrainedBox(
+                      constraints: BoxConstraints.expand(
+                        height: MediaQuery.of(context).size.height*0.2,
+                        width: MediaQuery.of(context).size.width*0.3,
+
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: CachedNetworkImage(
+                          height: MediaQuery.of(context).size.height*0.5,
+                          width: MediaQuery.of(context).size.width*0.5,
+                          imageUrl: "https://www.nasscom.in/sites/default/files/speakers/Vijaya-Kotwani.jpg",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 25),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Vijaya Kotwani",style: TextStyle(fontSize: 23
+                            ),)
+                          ],
+                        ),
+                        SizedBox(height: 5),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Solutions Architect",style: TextStyle(color: Colors.black45),),
+                            Text("@Persistent Systems",textAlign: TextAlign.right,style: TextStyle(color: Colors.black45),)
+                          ],
+                        ),
+
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            IconButton(icon:Icon(FontAwesomeIcons.linkedin,size: 20,),
+                                onPressed:()=>launch('https://in.linkedin.com/in/dr-mukta-paliwal') ),
 
                           ],
                         ),

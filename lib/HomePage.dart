@@ -1,3 +1,4 @@
+import 'package:devfest/Handouts.dart';
 import 'package:devfest/about.dart';
 import 'package:devfest/colors.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,10 @@ import'./Events.dart';
 import './Speakers.dart';
 import './Home.dart';
 import './map.dart';
+import './message.dart';
+import 'dart:async';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,6 +17,57 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
+  final Firestore _db =Firestore.instance;
+  final List<Message> messages = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _firebaseMessaging.configure(
+      onMessage: (Map<String, dynamic> message) async {
+        print("onMessage: $message");
+        showDialog(
+            context: context,
+            builder: (context)=>AlertDialog(
+              shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15)),
+              contentPadding: const EdgeInsets.only(top: 10),
+              elevation: 4,
+              titlePadding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
+              title: Text(message['notification']['title'],textAlign: TextAlign.center,),
+              content:
+              Container(
+                padding: EdgeInsets.fromLTRB(10, 10, 15, 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Text(message['notification']['body'],)
+                  ],
+                ),
+              ),
+            )
+        );
+      },
+      onLaunch: (Map<String, dynamic> message) async {
+        print("onLaunch: $message");
+
+        final notification = message['data'];
+        setState(() {
+          messages.add(Message(
+            title: '${notification['title']}',
+            body: '${notification['body']}',
+          ));
+        });
+      },
+      onResume: (Map<String, dynamic> message) async {
+        print("onResume: $message");
+      },
+    );
+    _firebaseMessaging.requestNotificationPermissions(
+        const IosNotificationSettings(sound: true, badge: true, alert: true));
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,14 +101,14 @@ class _HomePageState extends State<HomePage> {
             new Divider(),
             new ListTile(
               title: new Text("Home",style: new TextStyle(fontFamily: 'GoogleSans'),),
-              leading: new Icon(Icons.home,color: gyellow,),
+              leading: new Icon(Icons.home,color: Colors.black87,),
                 onTap: () {
                   Navigator.of(context).pop();
                 }
             ),
             new ListTile(
               title: new Text("Events"),
-              leading: new Icon(Icons.event,color: Colors.blue,),
+              leading: new Icon(Icons.event,color:gblue,),
 
                 onTap: () {
                   Navigator.of(context).pop();
@@ -64,7 +120,7 @@ class _HomePageState extends State<HomePage> {
             ),
             new ListTile(
               title: new Text("Speakers"),
-              leading: new Icon(Icons.person,color: Colors.red,),
+              leading: new Icon(Icons.person,color:gred),
 
                 onTap: () {
                   Navigator.of(context).pop();
@@ -76,12 +132,23 @@ class _HomePageState extends State<HomePage> {
             ),
             new ListTile(
                 title: new Text("Venue"),
-                leading: new Icon(Icons.map,color: Colors.green,),
+                leading: new Icon(Icons.map,color:ggreen,),
                 onTap: () {
                   Navigator.of(context).pop();
                   Navigator.of(context).push(new MaterialPageRoute(
                       builder: (BuildContext context) =>
-                      new Map()
+                      new GMap()
+                  ));
+                }
+            ),
+            new ListTile(
+                title: new Text("Handouts"),
+                leading: new Icon(Icons.note,color:gyellow,),
+                onTap: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(new MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                      new Handouts()
                   ));
                 }
             ),
@@ -104,3 +171,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+Widget buildMessage(Message message) => ListTile(
+  title: Text(message.title),
+  subtitle: Text(message.body),
+);
+

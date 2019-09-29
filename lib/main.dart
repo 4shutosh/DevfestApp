@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'HomePage.dart';
+import 'message.dart';
 
 Future<void> main() async{
   SystemChrome.setSystemUIOverlayStyle(
@@ -9,7 +10,7 @@ Future<void> main() async{
 
   runApp(MyApp());
 
-} 
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -28,5 +29,10 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+Widget buildMessage(Message message) => ListTile(
+  title: Text(message.title),
+  subtitle: Text(message.body),
+);
 
 

@@ -71,7 +71,14 @@ class _Schedule1State extends State<Schedule1> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-                            Text("DevFest Nagpur Opening",style: TextStyle(fontSize: 20),textAlign: TextAlign.left,),
+                            Text("Tech for Good",style: TextStyle(fontSize: 20),textAlign: TextAlign.left,),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: <Widget>[
+                            Text("Speakers Felicitation",style: TextStyle(fontSize: 20),textAlign: TextAlign.left),
                           ],
                         ),
 

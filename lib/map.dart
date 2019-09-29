@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class Map extends StatefulWidget {
+class GMap extends StatefulWidget {
   @override
-  _MapState createState() => _MapState();
+  _GMapState createState() => _GMapState();
 }
 
-class _MapState extends State<Map> {
+class _GMapState extends State<GMap> {
  List<Marker> allMarkers = [];
  
  @override

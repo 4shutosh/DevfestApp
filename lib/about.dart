@@ -51,20 +51,27 @@ class _AboutState extends State<About> {
             ],
           ),
           Divider(),
-          Row(
-            children: <Widget>[
-              SizedBox(width: 10,),
-              CircleAvatar(
-                backgroundImage: AssetImage('assets/images/ashu.jpg'),
+          Expanded(
+            child: Align(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  CircleAvatar(
+                    backgroundImage: AssetImage('assets/images/ashu.jpg'),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(7),
+                    child: Text("App created by Ashutosh Singh",style: TextStyle(color: Colors.black45,fontSize: 15),),
+                  ),
+                  IconButton(icon: Icon(FontAwesomeIcons.github,size: 20,color: Colors.black87), onPressed:()=>launch("https://github.com/zohan4sh")),
+                  IconButton(icon: Icon(FontAwesomeIcons.instagram,size: 20,color: Colors.black87,), onPressed:()=>launch("https://www.instagram.com/zohan_ash/")),
+                  IconButton(icon: Icon(FontAwesomeIcons.linkedin,size: 20,color: Colors.black87,), onPressed:()=>launch("https://www.linkedin.com/in/ashutosh-singh-72b501194/")),
+                ],
               ),
-              Container(
-                padding: EdgeInsets.all(10),
-                child: Text("App created by Ashutosh Singh",style: TextStyle(color: Colors.black45,fontSize: 15),),
-              ),
-              IconButton(icon: Icon(FontAwesomeIcons.github,size: 20,color: Colors.black87), onPressed:()=>launch("https://github.com/zohan4sh")),
-              IconButton(icon: Icon(FontAwesomeIcons.instagram,size: 20,color: Colors.black87,), onPressed:()=>launch("https://www.instagram.com/zohan_ash/")),
-            ],
+              alignment: FractionalOffset.topCenter,
+            ),
           ),
+          
         ]
 
       ),

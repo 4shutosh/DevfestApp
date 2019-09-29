@@ -185,7 +185,7 @@ class _Schedule2State extends State<Schedule2> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-                            Text("Hands-on 4 : Cloud",style: TextStyle(fontSize: 20),textAlign: TextAlign.left,),
+                            Text("Hands-on 4 : Machine Learning",style: TextStyle(fontSize: 20),textAlign: TextAlign.left,),
                           ],
                         ),
 

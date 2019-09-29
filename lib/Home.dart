@@ -1,12 +1,16 @@
 import 'package:devfest/Events.dart';
 import 'package:devfest/Speakers.dart';
 import 'package:devfest/map.dart' as prefix0;
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import './colors.dart';
 import './Events.dart';
 import './map.dart';
+import './message.dart';
+import './Handouts.dart';
 
 
 class Home extends StatefulWidget {
@@ -15,6 +19,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -37,16 +44,16 @@ class _HomeState extends State<Home> {
             ),//image
             new Divider(),
             Container(
-              padding: const EdgeInsets.all(10),
-              height: MediaQuery.of(context).size.height*0.25,
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
               width: MediaQuery.of(context).size.width*0.3,
               child: new Text(
                   "Google Developers Group Nagpur brings together the community experts in Android, Web and Cloud technologies to Nagpur for two days of sessions, workshops and code labs by the Central India's Biggest Developers Conference to Connect, Code and Innovate.",
                   style: new TextStyle(fontSize: 15),
                   textAlign: TextAlign.center,
               ),
-            ),//text
-            new Row(
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height*0.03),
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 ButtonCard(
@@ -63,22 +70,37 @@ class _HomeState extends State<Home> {
                   color: Colors.red,
                   title: 'Speakers',
                   onPressed: ()=> Navigator.of(context).push(new MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                        new Speakers()
-                      )),
+                      builder: (BuildContext context) =>
+                      new Speakers()
+                  )),
                 ),
+              ],
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height*0.02),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
                 ButtonCard(
                   icon: Icons.map,
                   color: ggreen,
                   title: 'Venue',
                   onPressed: ()=> Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (BuildContext context) =>
-                      new Map()
-                      )),
+                      builder: (BuildContext context) =>
+                      new GMap()
+                  )),
+                ),
+                ButtonCard(
+                  icon: Icons.note,
+                  color: gyellow,
+                  title: 'Handouts',
+                  onPressed: ()=> Navigator.of(context).push(new MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                      new Handouts()
+                  )),
                 ),
               ],
             ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.07),
+            SizedBox(height: MediaQuery.of(context).size.height*0.05),
             Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -106,17 +128,22 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ), //*hyperlinks
-            SizedBox(height: MediaQuery.of(context).size.height*0.07,),
+            SizedBox(height: MediaQuery.of(context).size.height*0.05,),
             Container(
-             child: Row(
-               mainAxisAlignment: MainAxisAlignment.center,
-               children: <Widget>[
-                 Text('#kyabolteNagpur',style: TextStyle(color: gblue),)
-               ],
-             ),
-            )
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  InkWell(
+                      onTap:()=>launch("https://twitter.com/GDGNagpur_"),
+                      child: Text('#kyabolteNagpur',style: TextStyle(color: gblue),)
+                  )
+                ],
+              ),
+            ),
           ],
       ),
+
+
     ),
     );
   }
@@ -128,8 +155,8 @@ class ButtonCard extends StatelessWidget {
   final String title;
   final Color color;
 
-  const ButtonCard({Key key,this.onPressed,this.color,this.title,this.icon}):super(key:key);
 
+  const ButtonCard({Key key,this.onPressed,this.color,this.title,this.icon,}):super(key:key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -147,9 +174,9 @@ class ButtonCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   color: Colors.white,
                   boxShadow: [BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 7,
-                    spreadRadius: 3,
+                    color: color,
+                    blurRadius: 5,
+                    spreadRadius: 2,
                   )]
               ),
               child: Column(
@@ -157,7 +184,7 @@ class ButtonCard extends StatelessWidget {
                 children: <Widget>[
                   Icon(icon,color: color,),
                   SizedBox(height: 10,),
-                  Text(title)
+                  Text(title),
                 ],
               ),
             ),
@@ -167,4 +194,10 @@ class ButtonCard extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
 
