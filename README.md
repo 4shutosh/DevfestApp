@@ -1,16 +1,15 @@
-# devfest
+https://play.google.com/store/apps/details?id=com.devfest.devfest
 
-A new Flutter project.
+## DevFest
+Android App for DevFest Nagpur 2019\
+Real Time Notifications.\
+Made from scratch using _Flutter_\
+Integrated Google Apis and firebase\
+Took UI ideas from google IO 2019 app for agenda(events) and layout from Devfest app(Pawan Kumar) still built everything from scartch\
+No Bloc used for now\
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Here are some screenshots if the App
+![](./Images/ss1.jpg)    
+![](./Images/sidebar.jpg)
+#### Ashutosh Singh
+:cake:
